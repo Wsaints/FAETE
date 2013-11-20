@@ -1,4 +1,0 @@
-FAETE
-=====
-
-Programação em C++
