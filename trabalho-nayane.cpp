@@ -5,7 +5,7 @@
 using namespace std;
 
 
-// Estrutura de cadastro do aluno
+// Estrutura de cadastro do aluno.
 struct Cadastro
 {
           string matricula;
@@ -13,3 +13,12 @@ struct Cadastro
           string disciplina;
           double nota;
 };
+
+
+//Program principal.
+int main (){
+
+
+
+
+}
