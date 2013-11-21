@@ -2,10 +2,6 @@
 //
 #include<iostream>
 #include<cstdlib>
-using namespace std;
-
-#include<iostream>
-#include<cstdlib>
 #include<fstream>
 using namespace std;
 using std :: ifstream;
