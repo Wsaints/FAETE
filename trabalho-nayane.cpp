@@ -109,7 +109,7 @@ void notas (){
            }
            
            
-   if(e == 2){
+           if(e == 2){
                    
                    for (i = 6; i<9; i++){
                            
@@ -212,20 +212,151 @@ void notas (){
            
    } 
    
+   // busca por nome, ele mostra como resultado o nome e as notas do aluno
    void busca (){
  
-	int i,e;   	
+	int i,j;   	
+   	string nome;
    	
    	system("cls");
    	
-   	cout<<"           MENU DE BUSCAS \n\n\n";
-   	cout<<"1-  procurar alunos \n";
-   	cout<<"2 - mostrar notas \n";
+   	cout<<"    \n\n\t\t       MENU DE BUSCAS \n\n\n";
+   	cout<<"\t\t  digite o nome do aluno: ";
+   	cin >> nome;
+   	
+   	for (i=0;i<10;i++){
    	
    	
+   	if (nome == _cad._nome[i]){
+   		
+   		cout<<"\n\n\t\t aluno: "<<_cad._nome[i]<<"\n";
+   		
+   		
+   		 if(i == 0){
+                   j = 1;
+                   for ( i = 0; i<3; i++){
+                           
+                           cout<<"\n\n"<<i<<"  nota: "<<_cad._nota[i]<<"\n";
+                           
+                           j++;
+                   }
+                   
+               system("pause");    
+           }
+                
+           
+           
+           if(i == 1){
+                   j = 1;
+                   for (i = 3; i<6; i++){
+                           
+                          cout<<"\n\n"<<i<<"  nota: "<<_cad._nota[i]<<"\n";
+                          j++;  
+                   }
+                   
+                   system("pause");
+           }
+           
+           
+           if(i == 2){
+                   j = 1;
+                   for (i = 6; i<9; i++){
+                           
+                         cout<<"\n\n"<<i<<"  nota: "<<_cad._nota[i]<<"\n";
+                           j++;
+                   }
+                   
+                   system("pause");
+           }        
+           
+           if(i == 3){
+                   j = 1;
+                   for (i = 9; i<12; i++){
+                           
+                          cout<<"\n\n"<<i<<"  nota: "<<_cad._nota[i]<<"\n";
+                           j++; 
+                   }
+                   
+                   system("pause");
+           }
+           
+           
+           if(i == 4){
+                   j = 1;
+                   for (i = 12; i<15; i++){
+                           
+                           cout<<"\n\n"<<i<<"  nota: "<<_cad._nota[i]<<"\n";
+                            j++;
+                   }
+                   
+                   system("pause");
+           }
+           
+           if(i == 5){
+                   j = 1;
+                   for (i = 15; i<18; i++){
+                           
+                           cout<<"\n\n"<<i<<"  nota: "<<_cad._nota[i]<<"\n";
+                            j++;
+                   }
+                   
+                   system("pause");
+           }
+           
+           if(i == 6){
+                   j = 1;
+                   for (i = 18; i<21; i++){
+                           
+                          cout<<"\n\n"<<i<<"  nota: "<<_cad._nota[i]<<"\n";
+                           j++; 
+                   }
+                   
+                   system("pause");
+           }
+           
+           
+           if(i == 7){
+                   j = 1;
+                   for (i = 21; i<24; i++){
+                           
+                          cout<<"\n\n"<<i<<"  nota: "<<_cad._nota[i]<<"\n";
+                           j++; 
+                   }
+                   
+                   system("pause");
+           }
+           
+           if(i == 8){
+                   j = 1;
+                   for (i = 24; i<27; i++){
+                           
+                    cout<<"\n\n"<<i<<"  nota: "<<_cad._nota[i]<<"\n";     
+                           j++; 
+                   }
+                   
+				   system("pause");
+                   
+           }
+           
+           if(i == 9){
+                   j = 1;
+                   for (i = 27; i<30; i++){
+                           
+                           cout<<"\n\n"<<i<<"  nota: "<<_cad._nota[i]<<"\n";
+                           j++;  
+                           
+                   }
+                   
+                   system("pause");
+           }
+           
+   		
+   	
+   		
+   	}
    	
    	
-   	
+   }
    	
    	
    	
@@ -237,10 +368,8 @@ void notas (){
 
         
 
-
-
 //Programa principal.
- main (){
+int main (){
          
          string nome[10];
           string disciplina[3];
@@ -281,6 +410,11 @@ break;
 case 4:
 busca();
 break;
+
+case 5:
+	
+break;	
+	
 
 case 6: break;        
 default:{
