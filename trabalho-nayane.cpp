@@ -36,14 +36,19 @@ void cad_alunos(){
      
     
             while(e != 2 ){
-            
+            		system("cls");
+            		  cout<<"\t\t CADASTRO DE ALUNOS \n";		
                       cout<<"\n\n\t\t digite o nome do aluno: ";
                       cin >> _cad._nome[_i];
                   	  cout<<"\n\n\t\t deseja efetuar outro cadastro: ";
                   	  cout<<"\n\n\t\t escolha 1 - SIM / 2 - NÃO ";
                       cout<<"\t\t "; cin >> e;
+                      
                       _i++;
-                      if (_i == 9){
+                      if (_i == 10){
+                      	cout<<"\n\n turma completada!! ";
+                      	cout<<"\n presione enter para voltar ao menu principal\n ";
+                      	getch ();
                       	break;
                       }
                  }
@@ -83,7 +88,7 @@ void notas (){
         
         for ( i = 0; i<10;i++){
                 
-                cout<<i<<"\n\t\t - aluno: "<<_cad._nome[i]<<"\n ";        
+                cout<<"\t"<<i<<" - aluno: "<<_cad._nome[i]<<"\n ";        
                 
         
         }
@@ -251,7 +256,8 @@ void notas (){
                            
                            j++;
                    }
-                    
+                   
+           getch ();        
            }
                 
            
@@ -264,7 +270,7 @@ void notas (){
                           j++;  
                    }
                    
-                
+            getch ();     
            }
            
            
@@ -276,7 +282,7 @@ void notas (){
                            j++;
                    }
                    
-                   
+              getch ();      
            }        
            
            if(i == 3){
@@ -287,7 +293,7 @@ void notas (){
                            j++; 
                    }
                    
-                
+              getch ();   
            }
            
            
@@ -299,7 +305,7 @@ void notas (){
                             j++;
                    }
                    
-                   
+              getch ();      
            }
            
            if(i == 5){
@@ -310,7 +316,7 @@ void notas (){
                             j++;
                    }
                    
-                
+               getch ();  
            }
            
            if(i == 6){
@@ -321,7 +327,7 @@ void notas (){
                            j++; 
                    }
                    
-                
+             getch ();    
            }
            
            
@@ -333,7 +339,7 @@ void notas (){
                            j++; 
                    }
                    
-                   
+              getch ();      
            }
            
            if(i == 8){
@@ -345,7 +351,7 @@ void notas (){
                    }
                    
                                 
-                   
+               getch ();     
            }
            
            if(i == 9){
@@ -357,12 +363,12 @@ void notas (){
                            
                    }
                    
-                   
+                 getch (); 
            }
            
                    
            
-            system("pause");       
+                 
            }
            
            
@@ -374,7 +380,7 @@ void notas (){
            system ("cls");
            
    }
-    
+    //função pra atualizar o numero de faltas dos alunos
     void faltas () {
     	
      int e;
@@ -471,7 +477,8 @@ void notas (){
 	system ("cls");
    	
     }
-    
+    //essa é um função chamada no menu de relatórios, serve para a opção: relatório individual
+    //onde se mostra a situação de um aluno por vez
      void relatorio_ind (){
     	int i,e;
     	system ("cls");
@@ -954,32 +961,547 @@ void notas (){
     	 
     }
     
-
+//e a outra função chamada na opção relatorios, esse mostra o quadro geral de todos os alunos de um só vez
 void relatorio_geral (){
 	
+	int i,j;
+	
+	system("cls");
+	cout<<"\t\t\n\n RESUMO GERAL \n\n ";
+	cout<<"\n\n professor: "<<_cad._prof_nome<<"\n";
+	cout<<"\n\n disciplina: "<<_cad._disciplina<<" \n\n";
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+ 
+                   
+                   _cad._media[0] = 0;
+                   for ( i = 0; i<3; i++){
+                           
+                    _cad._media[0] = _cad._media[0] + _cad._nota[i]; 
+                    
+                           
+                   }
+                   
+                   if(_cad._falta[0] < 15){
+                   
+               			 j = 1;
+                   for ( i = 0; i<3; i++){
+                           
+                           cout<<"\n\t\t"<<j<<"  nota: "<<_cad._nota[i]<<"\n";
+                           
+                           j++;
+                   }
+               	
+                  		
+            
+               
+			      	cout<<"\t\t aluno: "<<_cad._nome[0]<<"\n ";
+			      	cout<<"\t\t media: "<<_cad._media[0]/3<<"\n ";
+			      
+			       _cad._media[0] = _cad._media[0]/3;
+			      
+			      if (_cad._media[0] >= 7){
+			      	cout<<"\n\t\t aluno aprovado!! \n\n";
+			      	
+			      }
+			      if (_cad._media[0] < 7 && _cad._media[0] >= 4){
+			      	cout<<"\n\t\t aluno de prova final!! \n\n";
+			      	
+			      }
+			      
+			     if (_cad._media[0] < 4){
+			      	cout<<"\n\t\t aluno de reprovado!! \n\n";
+			      	
+			      }
+				 
+				
+			      
+               }
+               else{
+               	
+               		cout<<"\n\t\t aluno reprovado por faltas ";
+               		cout<<"faltas "<<_cad._falta[0];
+               }
+               
+               
+           
+                   
+                   _cad._media[1] = 0;
+                   for (i = 3; i<6; i++){
+                           
+                      _cad._media[1] = _cad._media[1] + _cad._nota[i]; 
+                    
+                           
+                   }
+                   
+                   if(_cad._falta[1] < 15){
+                   
+               
+			      	cout<<"\t\t aluno: "<<_cad._nome[1]<<"\n ";
+			      	cout<<"\t\t media: "<<_cad._media[1]/3<<"\n ";
+			      	
+			      	
+			      	 j = 1;
+                   for ( i = 3; i<6; i++){
+                           
+                           cout<<"\n\t\t"<<j<<"  nota: "<<_cad._nota[i]<<"\n";
+                           
+                           j++;
+                   }
+			      	
+			      	
+			      	
+			       _cad._media[1] = _cad._media[1]/3;
+			       
+			      if (_cad._media[1] >= 7){
+			      	cout<<"\n\t\t aluno aprovado!! \n\n";
+			      	
+			      }
+			      if (_cad._media[1] < 7 && _cad._media[1] >= 4){
+			      	cout<<"\n\t\t aluno de prova final!! \n\n";
+			      	
+			      }
+			      
+			     if (_cad._media[1] < 4){
+			      	cout<<"\n\t\t aluno de reprovado!! \n\n";
+			      	
+			      }
+				 
+				
+			      
+               }
+               else{
+               	
+               		cout<<"\n\t\t aluno reprovado por faltas ";
+               		cout<<"faltas "<<_cad._falta[1];
+               }
+               
+                
+             
+                    
+           
+                   _cad._media[2] = 0;
+                   for (i = 6; i<9; i++){
+                           
+                           _cad._media[2] = _cad._media[2] + _cad._nota[i]; 
+                    
+                           
+                   }
+                   
+                   if(_cad._falta[2] < 15){
+                   
+               
+			      	cout<<"\t\t aluno: "<<_cad._nome[2]<<"\n ";
+			      	cout<<"\t\t media: "<<_cad._media[2]/3<<"\n ";
+			      	
+			      	 j = 1;
+                   for ( i = 6; i<9; i++){
+                           
+                           cout<<"\n\t\t"<<j<<"  nota: "<<_cad._nota[i]<<"\n";
+                           
+                           j++;
+                   }
+			      	
+			      
+			       _cad._media[2] = _cad._media[2]/3;
+			       
+			      if (_cad._media[2] >= 7){
+			      	cout<<"\n\t\t aluno aprovado!! \n\n";
+			      	
+			      }
+			      if (_cad._media[2] < 7 && _cad._media[2] >= 4){
+			      	cout<<"\n\t\t aluno de prova final!! \n\n";
+			      	
+			      }
+			      
+			     if (_cad._media[2] < 4){
+			      	cout<<"\n\t\t aluno de reprovado!! \n\n";
+			      	
+			      }
+				 
+				
+			      
+               }
+               else{
+               	
+               		cout<<"\n\t\t aluno reprovado por faltas \n\n";
+               		cout<<"faltas "<<_cad._falta[2];
+               }
+               
+     
+    
+           	
+                   _cad._media[3] = 0;
+                   for (i = 9; i<12; i++){
+                          _cad._media[3] = _cad._media[3] + _cad._nota[i]; 
+                           
+                   }
+                   
+                   if(_cad._falta[3] < 15){
+                   
+               
+			      	cout<<"\t\t aluno: "<<_cad._nome[3]<<"\n ";
+			      	cout<<"\t\t media: "<<_cad._media[3]/3<<"\n ";
+			      	
+			      	 j = 1;
+                   for ( i = 9; i<12; i++){
+                           
+                           cout<<"\n\t\t"<<j<<"  nota: "<<_cad._nota[i]<<"\n";
+                           
+                           j++;
+                   }
+			      	
+			      	
+			      
+			       _cad._media[3] = _cad._media[3]/3;
+			       
+			      if (_cad._media[3] >= 7){
+			      	cout<<"\n\t\t aluno aprovado!! \n\n";
+			      	
+			      }
+			      if (_cad._media[3] < 7 && _cad._media[3] >= 4){
+			      	cout<<"\n\t\t aluno de prova final!! \n\n";
+			      	
+			      }
+			      
+			     if (_cad._media[3] < 4){
+			      	cout<<"\n\t\t aluno de reprovado!! \n\n";
+			      	
+			      }
+				 
+				
+			      
+               }
+               else{
+               	
+               		cout<<"\n\t\t aluno reprovado por faltas \n\n";
+               		cout<<"faltas "<<_cad._falta[3];
+               }
+                       
+                   
+        
+        
+                   
+                   _cad._media[4] = 0;
+                   for (i = 12; i<15; i++){
+                           
+                       _cad._media[4] = _cad._media[4] + _cad._nota[i]; 
+                    
+                           
+                   }
+                   
+                   if(_cad._falta[4] < 15){
+                   
+               
+			      	cout<<"\t\t aluno: "<<_cad._nome[4]<<"\n ";
+			      	cout<<"\t\t media: "<<_cad._media[4]/3<<"\n ";
+			      	
+			      	 j = 1;
+                   for ( i = 12; i<15; i++){
+                           
+                           cout<<"\n\t\t"<<j<<"  nota: "<<_cad._nota[i]<<"\n";
+                           
+                           j++;
+                   }
+			      	
+			      
+			       _cad._media[4] = _cad._media[4]/3;
+			       
+			      if (_cad._media[4] >= 7){
+			      	cout<<"\n\t\t aluno aprovado!! \n\n";
+			      	
+			      }
+			      if (_cad._media[4] < 7 && _cad._media[4] >= 4){
+			      	cout<<"\n\t\t aluno de prova final!! \n\n";
+			      	
+			      }
+			      
+			     if (_cad._media[4] < 4){
+			      	cout<<"\n\t\t aluno de reprovado!! \n\n";
+			      	
+			      }
+				 
+				
+			      
+               }
+               else{
+               	
+               		cout<<"\n\t\t aluno reprovado por faltas \n\n ";
+               		cout<<"faltas "<<_cad._falta[4];
+               }
+               
+                   
+                 
+           
+           
+           
+                    _cad._media[5] = 0;
+                   for (i = 15; i<18; i++){
+                           
+                        _cad._media[5] = _cad._media[5] + _cad._nota[i]; 
+                    
+                           
+                   }
+                   
+                   if(_cad._falta[5] < 15){
+                   
+               
+			      	cout<<"\t\t aluno: "<<_cad._nome[5]<<"\n ";
+			      	cout<<"\t\t media: "<<_cad._media[5]/3<<"\n ";
+			      	
+			      	 j = 1;
+                   for ( i = 15; i<18; i++){
+                           
+                           cout<<"\n\t\t"<<j<<"  nota: "<<_cad._nota[i]<<"\n";
+                           
+                           j++;
+                   }
+			      
+			       _cad._media[5] = _cad._media[5]/3;
+			       
+			      if (_cad._media[5] >= 7){
+			      	cout<<"\n\t\t aluno aprovado!! \n\n";
+			      	
+			      }
+			      if (_cad._media[5] < 7 && _cad._media[5] >= 4){
+			      	cout<<"\n\t\t aluno de prova final!! \n\n";
+			      	
+			      }
+			      
+			     if (_cad._media[5] < 4){
+			      	cout<<"\n\t\t aluno de reprovado!! \n\n";
+			      	
+			      }
+				 
+				
+			      
+               }
+               else{
+               	
+               		cout<<"\n\t\t aluno reprovado por faltas \n\n";
+               		cout<<"faltas "<<_cad._falta[5];
+               }
+                   
+                  
+    
+           	
+                   _cad._media[6] = 0;
+                   for (i = 18; i<21; i++){
+                           
+                     _cad._media[6] = _cad._media[6] + _cad._nota[i]; 
+                    
+                           
+                   }
+                   
+                   if(_cad._falta[6] < 15){
+                   
+               
+			      	cout<<"\t\t aluno: "<<_cad._nome[6]<<"\n ";
+			      	cout<<"\t\t media: "<<_cad._media[6]/3<<"\n ";
+			      	
+			      	 j = 1;
+                   for ( i = 18; i<21; i++){
+                           
+                           cout<<"\n\t\t"<<j<<"  nota: "<<_cad._nota[i]<<"\n";
+                           
+                           j++;
+                   }
+			      	
+			      	
+			      	
+			      
+			       _cad._media[6] = _cad._media[6]/3;
+			       
+			      if (_cad._media[6] >= 7){
+			      	cout<<"\n\t\t aluno aprovado!! ";
+			      	
+			      }
+			      if (_cad._media[6] < 7 && _cad._media[6] >= 4){
+			      	cout<<"\n\t\t aluno de prova final!! \n\n";
+			      	
+			      }
+			      
+			     if (_cad._media[6] < 4){
+			      	cout<<"\n\t\t aluno de reprovado!! \n\n";
+			      	
+			      }
+				 
+				
+			      
+               }
+               else{
+               	
+               		cout<<"\n\t\t aluno reprovado por faltas \n\n";
+               		cout<<"faltas "<<_cad._falta[6];
+               }
+                   
+                   
+                
+           
+                
+                   _cad._media[7] = 0;
+                   for (i = 21; i<24; i++){
+                           
+                            _cad._media[7] = _cad._media[7] + _cad._nota[i]; 
+                    
+                           
+                   }
+                   
+                   if(_cad._falta[7] < 15){
+                   
+               
+			      	cout<<"\t\t aluno: "<<_cad._nome[7]<<"\n ";
+			      	cout<<"\t\t media: "<<_cad._media[7]/3<<"\n ";
+			      	
+			      	 j = 1;
+                   for ( i = 21; i<24; i++){
+                           
+                           cout<<"\n\t\t"<<j<<"  nota: "<<_cad._nota[i]<<"\n";
+                           
+                           j++;
+                   }
+			      	
+			      	
+			      	
+			      
+			       _cad._media[7] = _cad._media[7]/3;
+			       
+			      if (_cad._media[7] >= 7){
+			      	cout<<"\n\t\t aluno aprovado!! \n\n";
+			      	
+			      }
+			      if (_cad._media[7] < 7 && _cad._media[7] >= 4){
+			      	cout<<"\n\t\t aluno de prova final!! \n\n";
+			      	
+			      }
+			      
+			     if (_cad._media[7] < 4){
+			      	cout<<"\n\t\t aluno de reprovado!! \n\n";
+			      	
+			      }
+				 
+				
+			      
+               }
+               else{
+               	
+               		cout<<"\n\t\t aluno reprovado por faltas \n\n";
+               		cout<<"faltas "<<_cad._falta[7];
+               }
+                   
+                     
+           
+           
+           
+                   
+                   _cad._media[8] = 0;
+                   for (i = 24; i<27; i++){
+                           
+                            _cad._media[8] = _cad._media[8] + _cad._nota[i]; 
+                    
+                           
+                   }
+                   
+                   if(_cad._falta[8] < 15){
+                   
+               
+			      	cout<<"\t\t aluno: "<<_cad._nome[8]<<"\n ";
+			      	cout<<"\t\t media: "<<_cad._media[8]/3<<"\n ";
+			      	
+			      	 j = 1;
+                   for ( i = 24; i<27; i++){
+                           
+                           cout<<"\n\t\t"<<j<<"  nota: "<<_cad._nota[i]<<"\n";
+                           
+                           j++;
+                   }
+			      	
+			      
+			       _cad._media[8] = _cad._media[8]/3;
+			       
+			      if (_cad._media[8] >= 7){
+			      	cout<<"\n\t\t aluno aprovado!! \n\n";
+			      	
+			      }
+			      if (_cad._media[8] < 7 && _cad._media[8] >= 4){
+			      	cout<<"\n\t\t aluno de prova final!! \n\n";
+			      	
+			      }
+			      
+			     if (_cad._media[8] < 4){
+			      	cout<<"\n\t\t aluno de reprovado!! \n\n";
+			      	
+			      }
+				 
+				
+			      
+               }
+               else{
+               	
+               		cout<<"\n\t\t aluno reprovado por faltas \n\n";
+               		cout<<"faltas "<<_cad._falta[8];
+               }
+                   
+                   
+            
+           	
+                   _cad._media[9] = 0;
+                   for (i = 27; i<30; i++){
+                           
+                            _cad._media[9] = _cad._media[9] + _cad._nota[i]; 
+                    
+                           
+                   }
+                   
+                   if(_cad._falta[9] < 15){
+                   
+               
+			      	cout<<"\t\t aluno: "<<_cad._nome[9]<<"\n ";
+			      	cout<<"\t\t media: "<<_cad._media[9]/3<<"\n ";
+			      	
+			      	 j = 1;
+                   for ( i = 27; i<30; i++){
+                           
+                           cout<<"\n\t\t"<<j<<"  nota: "<<_cad._nota[i]<<"\n";
+                           
+                           j++;
+                   }
+			      	
+			      
+			       _cad._media[5] = _cad._media[9]/3;
+			       
+			      if (_cad._media[9] >= 7){
+			      	cout<<"\n\t\t aluno aprovado!! \n\n";
+			      	
+			      }
+			      if (_cad._media[9] < 7 && _cad._media[9] >= 4){
+			      	cout<<"\n\t\t aluno de prova final!! \n\n";
+			      	
+			      }
+			      
+			     if (_cad._media[9] < 4){
+			      	cout<<"\n\t\t aluno de reprovado!! \n\n";
+			      	
+			      }
+				 
+				
+			      
+               }
+               else{
+               	
+               		cout<<"\n\t\t aluno reprovado por faltas \n\n";
+               		cout<<"faltas "<<_cad._falta[9];
+               }
+                   
+                   
+				   
+		 getch ();    
+    	system("cls");
+    	
 }
   
     
-    
+    //e essa é a função de relatórios, onde mostra as funções citadas acima
     void relatorios (){
     	
     	int e;
@@ -997,7 +1519,7 @@ void relatorio_geral (){
 	     relatorio_ind ();
 	break;	
 	case 2: 
-	
+	relatorio_geral ();
 	break;	
 		
 			
@@ -1073,9 +1595,7 @@ default:{
         system("cls");
 }
 
-        
-        
-        
+                
                 
 }
 
